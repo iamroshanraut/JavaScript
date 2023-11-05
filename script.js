@@ -39,3 +39,18 @@ console.log(allLetters);
 // Join Method
 
 console.log(allLetters.join('-')); // It will join all the letter with - and extract from array
+
+
+// New At Method
+
+const arre = [12, 34 , 56 ,89 , 10];
+
+console.log(arre[0]);  // A traditional Way to do it
+console.log(arre.at(0)); // New morden way to do it
+
+console.log(arre[arre.length-1]); //  a way of finding last element of the array
+console.log(arre.at(-1)); // A new method to do it.
+
+console.log('Roshan'.at(0)); // works with string also
+console.log('Roshan'.at(-1));
+
