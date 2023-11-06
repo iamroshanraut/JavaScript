@@ -19,38 +19,66 @@ arr.splice(-1);
 console.log(arr);
 // It's Mutating the Original Array
 
-
-
 // Reverse Method
 const arr1 = ["j", "i", "h", "g", "f"];
 
 arr1.reverse(); // Here this reverse method will reverse all the values of this array.
 console.log(arr1);
 
-
-
 // Concat Method
 arr = ["a", "b", "c", "d", "e"];
-const allLetters = arr.concat(arr1);   // It will add both the arr & arr1 array together 
+const allLetters = arr.concat(arr1); // It will add both the arr & arr1 array together
 console.log(allLetters);
-
-
 
 // Join Method
 
-console.log(allLetters.join('-')); // It will join all the letter with - and extract from array
-
+console.log(allLetters.join("-")); // It will join all the letter with - and extract from array
 
 // New At Method
 
-const arre = [12, 34 , 56 ,89 , 10];
+const arre = [12, 34, 56, 89, 10];
 
-console.log(arre[0]);  // A traditional Way to do it
+console.log(arre[0]); // A traditional Way to do it
 console.log(arre.at(0)); // New morden way to do it
 
-console.log(arre[arre.length-1]); //  a way of finding last element of the array
+console.log(arre[arre.length - 1]); //  a way of finding last element of the array
 console.log(arre.at(-1)); // A new method to do it.
 
-console.log('Roshan'.at(0)); // works with string also
-console.log('Roshan'.at(-1));
+console.log("Roshan".at(0)); // works with string also
+console.log("Roshan".at(-1));
 
+// For Each Method
+
+let nums = [23, 45, 56, 67, 78, 12, 10];
+
+nums.forEach(function (num) {
+  // We can do with arrow function as well
+  console.log(num); // forEach Prints your Value Sepretly
+});
+
+nums.forEach((num, ind, arr) => {
+  // forEach can take three Arguments (1. will be Actual Value) (2. Will be index Number) (3. Will be complete Array)
+  console.log(num, ind, arr); // here we are printing all three using arrow Function
+});
+
+
+// Another Example of forEach
+let amount = [-150, 230, -400, 105, -700, 900, 650];
+
+amount.forEach(function(amt){
+    if(amt > 0){
+        console.log(`Your Account is credited with ${amt}.`);     // Small Task using forEach
+    }else{
+        console.log(`Your Account is Debited with ${amt}.`);
+    }
+})
+
+
+// We can Arrange this also by using index only.
+amount.forEach(function(amt , ind){
+    if(amt > 0){
+        console.log(`transaction ${ind + 1} : Your Account is credited with ${amt}.`);     
+    }else{
+        console.log(`transaction ${ind + 1} : Your Account is Debited with ${amt}.`);
+    }
+})
