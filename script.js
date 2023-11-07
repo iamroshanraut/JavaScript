@@ -61,24 +61,63 @@ nums.forEach((num, ind, arr) => {
   console.log(num, ind, arr); // here we are printing all three using arrow Function
 });
 
-
 // Another Example of forEach
 let amount = [-150, 230, -400, 105, -700, 900, 650];
 
-amount.forEach(function(amt){
-    if(amt > 0){
-        console.log(`Your Account is credited with ${amt}.`);     // Small Task using forEach
-    }else{
-        console.log(`Your Account is Debited with ${amt}.`);
-    }
+amount.forEach(function (amt) {
+  if (amt > 0) {
+    console.log(`Your Account is credited with ${amt}.`); // Small Task using forEach
+  } else {
+    console.log(`Your Account is Debited with ${amt}.`);
+  }
+});
+
+// We can Arrange this also by using index only.
+amount.forEach(function (amt, ind) {
+  if (amt > 0) {
+    console.log(
+      `transaction ${ind + 1} : Your Account is credited with ${amt}.`
+    );
+  } else {
+    console.log(
+      `transaction ${ind + 1} : Your Account is Debited with ${amt}.`
+    );
+  }
+});
+
+// forEach with Maps and Set
+
+// Example With Map
+
+let employee = new Map([
+  ["Name", "Roshan"],
+  ["Age", 22],
+  ["Gender", "Male"],
+  ["Salary", 22000],
+]);
+
+employee.forEach(function(value , key , map){
+    console.log(`Value of ${key} is ${value}`);
 })
 
 
-// We can Arrange this also by using index only.
-amount.forEach(function(amt , ind){
-    if(amt > 0){
-        console.log(`transaction ${ind + 1} : Your Account is credited with ${amt}.`);     
-    }else{
-        console.log(`transaction ${ind + 1} : Your Account is Debited with ${amt}.`);
-    }
+// Example with Map 2
+
+const currencies = new Map([
+    ['USD' , 'United States Dollar'],
+    ['EUR' , 'Euro'],
+    ['GBP' , 'Pound Sterling']
+]);
+
+currencies.forEach(function(value , key , map){
+    console.log(`${key} : ${value}`);
+})
+
+// Exmaple with Set
+
+
+let roles = new Set(['Admin' , 'Readonly' , 'Readwrite']);
+
+roles.forEach(function(value , key , set){
+    console.log(`${value} ${key}`);                // There is no key in set.
 })
