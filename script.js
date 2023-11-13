@@ -181,23 +181,30 @@ const withdraws = movsTwo.filter((mov) => mov <= 0);
 
 console.log(withdraws);
 
-
-
 // Reduce Method
 
 // Example
 
 const movsThree = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-const balance = movsThree.reduce((acc , cur , i) =>{   // In Reduce method there first parameter is accumulator.
-  console.log(`Accumulator ${i} is ${acc}`);          // Printing & checking it
-  return acc + cur ;                                 // returning it
-}, 0) ;                                             // Here the zero is initial value
+const balance = movsThree.reduce((acc, cur, i) => {
+  // In Reduce method there first parameter is accumulator.
+  console.log(`Accumulator ${i} is ${acc}`); // Printing & checking it
+  return acc + cur; // returning it
+}, 0); // Here the zero is initial value
 console.log(balance);
-
 
 // Example using For of Loop
 const movsfour = [200, 450, -400, 3000, -650, -130, 70, 1300];
 let balance1 = 0;
-for(const mov of movsfour) balance1 += mov;
+for (const mov of movsfour) balance1 += mov;
 console.log(balance1);
+
+// Finding Maximum Value using Reduce() Method
+
+const max = movsfour.reduce((acc, cur) => {
+  if (acc > cur) return acc;
+  else return cur;
+}, movsfour[0]);
+
+console.log(max);
