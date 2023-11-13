@@ -120,7 +120,7 @@ roles.forEach(function (value, key, set) {
   console.log(`${value} ${key}`); // There is no key in set.
 });
 
-// Map Method
+// **Map Method**
 
 // Example 1
 
@@ -151,3 +151,32 @@ const movScr = movsOne.map((mov, i) => {
 });
 
 console.log(movScr);
+
+
+// The Filter Method
+
+// Example 1
+const movsTwo = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const deposits = movsTwo.filter(function(mov){    // this is filtering out all the value which is greator then 0.
+  return mov > 0;
+});
+
+console.log(deposits);
+
+// Example using for of
+
+const deposits1 = [];
+for(const mov of movs){
+  if(mov>0){
+    deposits1.push(mov);      // Doing same thing with for of loop
+  }; 
+};
+
+console.log(deposits1);
+
+// Example filtering out all the negitive value.
+
+const withdraws = movsTwo.filter((mov)=>mov <= 0);
+
+console.log(withdraws);
