@@ -96,28 +96,58 @@ let employee = new Map([
   ["Salary", 22000],
 ]);
 
-employee.forEach(function(value , key , map){
-    console.log(`Value of ${key} is ${value}`);
-})
-
+employee.forEach(function (value, key, map) {
+  console.log(`Value of ${key} is ${value}`);
+});
 
 // Example with Map 2
 
 const currencies = new Map([
-    ['USD' , 'United States Dollar'],
-    ['EUR' , 'Euro'],
-    ['GBP' , 'Pound Sterling']
+  ["USD", "United States Dollar"],
+  ["EUR", "Euro"],
+  ["GBP", "Pound Sterling"],
 ]);
 
-currencies.forEach(function(value , key , map){
-    console.log(`${key} : ${value}`);
-})
+currencies.forEach(function (value, key, map) {
+  console.log(`${key} : ${value}`);
+});
 
 // Exmaple with Set
 
+let roles = new Set(["Admin", "Readonly", "Readwrite"]);
 
-let roles = new Set(['Admin' , 'Readonly' , 'Readwrite']);
+roles.forEach(function (value, key, set) {
+  console.log(`${value} ${key}`); // There is no key in set.
+});
 
-roles.forEach(function(value , key , set){
-    console.log(`${value} ${key}`);                // There is no key in set.
-})
+// Map Method
+
+// Example 1
+
+const movs = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const cRate = 1.1;
+
+const movUSD = movs.map(function (mov) {
+  return Math.round(mov * cRate);
+});
+
+// Example Using Arrow Function
+
+const movUSD1 = movs.map((mov) => Math.round(mov * cRate));
+
+console.log(movs);
+console.log(movUSD);
+console.log(movUSD1);
+
+// It also has 3 parameter like forEach()
+
+const movsOne = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const movScr = movsOne.map((mov, i) => {
+  return `Movement ${i + 1} : Your Account is ${
+    mov > 0 ? "Credited" : "Debited"
+  } with ${Math.abs(mov)}   `;
+});
+
+console.log(movScr);
