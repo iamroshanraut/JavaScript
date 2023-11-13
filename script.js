@@ -152,13 +152,13 @@ const movScr = movsOne.map((mov, i) => {
 
 console.log(movScr);
 
-
 // The Filter Method
 
 // Example 1
 const movsTwo = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-const deposits = movsTwo.filter(function(mov){    // this is filtering out all the value which is greator then 0.
+const deposits = movsTwo.filter(function (mov) {
+  // this is filtering out all the value which is greator then 0.
   return mov > 0;
 });
 
@@ -167,16 +167,37 @@ console.log(deposits);
 // Example using for of
 
 const deposits1 = [];
-for(const mov of movs){
-  if(mov>0){
-    deposits1.push(mov);      // Doing same thing with for of loop
-  }; 
-};
+for (const mov of movs) {
+  if (mov > 0) {
+    deposits1.push(mov); // Doing same thing with for of loop
+  }
+}
 
 console.log(deposits1);
 
 // Example filtering out all the negitive value.
 
-const withdraws = movsTwo.filter((mov)=>mov <= 0);
+const withdraws = movsTwo.filter((mov) => mov <= 0);
 
 console.log(withdraws);
+
+
+
+// Reduce Method
+
+// Example
+
+const movsThree = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const balance = movsThree.reduce((acc , cur , i) =>{   // In Reduce method there first parameter is accumulator.
+  console.log(`Accumulator ${i} is ${acc}`);          // Printing & checking it
+  return acc + cur ;                                 // returning it
+}, 0) ;                                             // Here the zero is initial value
+console.log(balance);
+
+
+// Example using For of Loop
+const movsfour = [200, 450, -400, 3000, -650, -130, 70, 1300];
+let balance1 = 0;
+for(const mov of movsfour) balance1 += mov;
+console.log(balance1);
