@@ -209,40 +209,35 @@ const max = movsfour.reduce((acc, cur) => {
 
 console.log(max);
 
-
-
 // More Example of Map() Method
 
-const arrr = [5, 1, 3, 2,6];
+const arrr = [5, 1, 3, 2, 6];
 
-const double = arrr.map(val=>val*2);
+const double = arrr.map((val) => val * 2);
 console.log(double);
 
-
-const triple = arrr.map(val=>val*3);
+const triple = arrr.map((val) => val * 3);
 console.log(triple);
 
-const binary = arrr.map(val=>val.toString(2));
+const binary = arrr.map((val) => val.toString(2));
 console.log(binary);
-
 
 // More Example of Filter() Method
 
 const arrr1 = [5, 1, 3, 2, 6];
 
-const isodd = arrr.filter((val)=> val %  2 === 0);
+const isodd = arrr.filter((val) => val % 2 === 0);
 console.log(isodd);
 
-
-// More Example of Reduce() Method 
+// More Example of Reduce() Method
 //(SUM OR MAX)
 
 const arrr2 = [5, 1, 3, 2, 6];
 
 // using for loop
-function findSum(arr){
+function findSum(arr) {
   let total = 0;
-  for(const val of arr){
+  for (const val of arr) {
     total += val;
   }
   return total;
@@ -253,63 +248,70 @@ console.log(findSum(arrr2));
 const arrr3 = [5, 1, 3, 2, 6];
 
 let totalSum = 0;
-const sumTotal = arrr3.reduce((Acc , cur) => Acc + cur);  // Accumulator 
+const sumTotal = arrr3.reduce((Acc, cur) => Acc + cur); // Accumulator
 console.log(sumTotal);
-
 
 // Finding Max Value using Reduce()
 const arrr4 = [5, 1, 3, 2, 6];
 
-let Max1 = arrr4.reduce((acc ,val) => {
-  if(acc > val) return acc
-  else return val
-},0);                                     // Initial Value of acc is 0
+let Max1 = arrr4.reduce((acc, val) => {
+  if (acc > val) return acc;
+  else return val;
+}, 0); // Initial Value of acc is 0
 
 console.log(Max1);
 
-
-// Example 
+// Example
 const user = [
-  {firstName : "Roshan" , lastName : "Raut" , age : 22},
-  {firstName : "Vikas" , lastName : "Singh" , age : 23},
-  {firstName : "Raman" , lastName : "Kumar" , age : 23},
-  {firstName : "Risabh" , lastName : "Negi" , age : 23},
+  { firstName: "Roshan", lastName: "Raut", age: 22 },
+  { firstName: "Vikas", lastName: "Singh", age: 23 },
+  { firstName: "Raman", lastName: "Kumar", age: 23 },
+  { firstName: "Risabh", lastName: "Negi", age: 23 },
 ];
 
-const fullNameArr = user.map(x => x.firstName + " " + x.lastName);
+const fullNameArr = user.map((x) => x.firstName + " " + x.lastName);
 console.log(fullNameArr);
-
 
 // Example
 const user1 = [
-  {firstName : "Roshan" , lastName : "Raut" , age : 22},
-  {firstName : "Vikas" , lastName : "Singh" , age : 23},
-  {firstName : "Raman" , lastName : "Kumar" , age : 23},
-  {firstName : "Risabh" , lastName : "Negi" , age : 23},
+  { firstName: "Roshan", lastName: "Raut", age: 22 },
+  { firstName: "Vikas", lastName: "Singh", age: 23 },
+  { firstName: "Raman", lastName: "Kumar", age: 23 },
+  { firstName: "Risabh", lastName: "Negi", age: 23 },
 ];
 
-const output1 = user1.reduce((acc , cur) => {
-  if(acc[cur.age]){
+const output1 = user1.reduce((acc, cur) => {
+  if (acc[cur.age]) {
     acc[cur.age] = ++acc[cur.age];
-  }else{
+  } else {
     acc[cur.age] = 1;
   }
   return acc;
-},{});
+}, {});
 
 console.log(output1);
-
 
 // Example
 
 const user2 = [
-  {firstName : "Roshan" , lastName : "Raut" , age : 22},
-  {firstName : "Vikas" , lastName : "Singh" , age : 23},
-  {firstName : "Raman" , lastName : "Kumar" , age : 23},
-  {firstName : "Risabh" , lastName : "Negi" , age : 23},
+  { firstName: "Roshan", lastName: "Raut", age: 22 },
+  { firstName: "Vikas", lastName: "Singh", age: 23 },
+  { firstName: "Raman", lastName: "Kumar", age: 23 },
+  { firstName: "Risabh", lastName: "Negi", age: 23 },
 ];
 
-const check = user2.filter(cur => cur.age < 30).map((x)=>x.firstName);
+const check = user2.filter((cur) => cur.age < 30).map((x) => x.firstName);
 
 console.log(check);
 
+// Chaining with methods.
+
+const eurtousd = 1.1;
+const transc = [200, 100, -350, 400, 2000, -500];
+
+const totalDepositeUSD = transc
+  .filter((mov) => mov > 0)
+  .map((mov) => mov * eurtousd)
+  .reduce((acc, ind) => acc + ind, 0);
+
+  console.log(totalDepositeUSD);
