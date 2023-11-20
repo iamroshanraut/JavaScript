@@ -315,3 +315,25 @@ const totalDepositeUSD = transc
   .reduce((acc, ind) => acc + ind, 0);
 
   console.log(totalDepositeUSD);
+
+
+  // Find Method()
+ 
+  // Example 1
+  const transc1 = [200, 100, -350, 400, 2000, -500];
+  // It will only return first one element which match to the condition.
+  const firstWithdrawal = transc1.find(mov => mov < 0);
+  console.log(firstWithdrawal);
+
+  // Example 2
+
+  const user3 = [
+    { firstName: "Roshan", lastName: "Raut", age: 22 },
+    { firstName: "Vikas", lastName: "Singh", age: 23 },
+    { firstName: "Raman", lastName: "Kumar", age: 23 },
+    { firstName: "Risabh", lastName: "Negi", age: 23 },
+  ];
+
+  const account = user3.find(acc => acc.firstName === "Roshan");
+  console.log(account);
+
