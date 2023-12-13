@@ -337,3 +337,11 @@ const totalDepositeUSD = transc
   const account = user3.find(acc => acc.firstName === "Roshan");
   console.log(account);
 
+
+  // Some & Every Method
+
+  const movements10 = [200, 100, -350, 400, -130, -700,  2000, -500];
+  const checkmovs = movements10.some(mov => mov > 1000);
+  console.log(checkmovs);
+
+  console.log(movements10.some(mov => mov ===  -150));
