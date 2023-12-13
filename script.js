@@ -345,3 +345,12 @@ const totalDepositeUSD = transc
   console.log(checkmovs);
 
   console.log(movements10.some(mov => mov ===  -150));
+
+ console.log(movements10.every(mov => mov >= -1000));
+
+ //separate callback
+const vrvr1 = [200, 100, -350, 400, -130, -700,  2000, -500];
+const deposit = mov => mov > 0;
+console.log(vrvr1.some(deposit));
+console.log(vrvr1.every(deposit));
+console.log(vrvr1.filter(deposit));
