@@ -405,3 +405,12 @@ console.log(allMovements);
 
 const sumOfMovs = allMovements.reduce((acc, movs) => acc + movs ,0);
 console.log(sumOfMovs);
+
+// with chaining
+const overalBalance = accounts.map(acc => acc.movements).flat().reduce((acc,mov) => acc + mov,0);
+console.log(overalBalance);
+
+// With flatMap
+
+const overalBalance2 = accounts.flatMap(acc => acc.movements).reduce((acc,mov) => acc+mov ,0);
+console.log(overalBalance2);
