@@ -354,3 +354,10 @@ const deposit = mov => mov > 0;
 console.log(vrvr1.some(deposit));
 console.log(vrvr1.every(deposit));
 console.log(vrvr1.filter(deposit));
+
+// Flat & Flat Map
+
+//example 
+
+const arr20 = [[1,2,3],[4,5,6],7,8];
+console.log(arr20.flat());
