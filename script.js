@@ -314,50 +314,53 @@ const totalDepositeUSD = transc
   .map((mov) => mov * eurtousd)
   .reduce((acc, ind) => acc + ind, 0);
 
-  console.log(totalDepositeUSD);
+console.log(totalDepositeUSD);
 
+// Find Method()
 
-  // Find Method()
- 
-  // Example 1
-  const transc1 = [200, 100, -350, 400, 2000, -500];
-  // It will only return first one element which match to the condition.
-  const firstWithdrawal = transc1.find(mov => mov < 0);
-  console.log(firstWithdrawal);
+// Example 1
+const transc1 = [200, 100, -350, 400, 2000, -500];
+// It will only return first one element which match to the condition.
+const firstWithdrawal = transc1.find((mov) => mov < 0);
+console.log(firstWithdrawal);
 
-  // Example 2
+// Example 2
 
-  const user3 = [
-    { firstName: "Roshan", lastName: "Raut", age: 22 },
-    { firstName: "Vikas", lastName: "Singh", age: 23 },
-    { firstName: "Raman", lastName: "Kumar", age: 23 },
-    { firstName: "Risabh", lastName: "Negi", age: 23 },
-  ];
+const user3 = [
+  { firstName: "Roshan", lastName: "Raut", age: 22 },
+  { firstName: "Vikas", lastName: "Singh", age: 23 },
+  { firstName: "Raman", lastName: "Kumar", age: 23 },
+  { firstName: "Risabh", lastName: "Negi", age: 23 },
+];
 
-  const account = user3.find(acc => acc.firstName === "Roshan");
-  console.log(account);
+const account = user3.find((acc) => acc.firstName === "Roshan");
+console.log(account);
 
+// Some & Every Method
 
-  // Some & Every Method
+const movements10 = [200, 100, -350, 400, -130, -700, 2000, -500];
+const checkmovs = movements10.some((mov) => mov > 1000);
+console.log(checkmovs);
 
-  const movements10 = [200, 100, -350, 400, -130, -700,  2000, -500];
-  const checkmovs = movements10.some(mov => mov > 1000);
-  console.log(checkmovs);
+console.log(movements10.some((mov) => mov === -150));
 
-  console.log(movements10.some(mov => mov ===  -150));
+console.log(movements10.every((mov) => mov >= -1000));
 
- console.log(movements10.every(mov => mov >= -1000));
-
- //separate callback
-const vrvr1 = [200, 100, -350, 400, -130, -700,  2000, -500];
-const deposit = mov => mov > 0;
+//separate callback
+const vrvr1 = [200, 100, -350, 400, -130, -700, 2000, -500];
+const deposit = (mov) => mov > 0;
 console.log(vrvr1.some(deposit));
 console.log(vrvr1.every(deposit));
 console.log(vrvr1.filter(deposit));
 
 // Flat & Flat Map
 
-//example 
+//example 1
 
-const arr20 = [[1,2,3],[4,5,6],7,8];
+const arr20 = [[1, 2, 3], [4, 5, 6], 7, 8];
 console.log(arr20.flat());
+
+//example2
+
+const arr21 = [[[1, 2], 3], [4, [5, 6]], 7, 8];
+console.log(arr21.flat(2));
